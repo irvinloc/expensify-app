@@ -8,7 +8,7 @@ const defaultFilterReducerState= {
 }
 
 export const sortByAmount = ()=>({
-    type:"SORT_BY_AMOUNT",
+    type:"SORT_BY_AMOUNT", 
     filter: {
         sortBy: 'amount'
     }
