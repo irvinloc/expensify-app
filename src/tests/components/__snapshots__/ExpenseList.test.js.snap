@@ -2,7 +2,6 @@
 
 exports[`should render ExpenseList with empty message 1`] = `
 <div>
-  cw
   <p>
     Please, register some expenses
   </p>
@@ -11,7 +10,6 @@ exports[`should render ExpenseList with empty message 1`] = `
 
 exports[`should render ExpenseList with expenses 1`] = `
 <div>
-  cw
   <Connect(ExpenseListItem)
     amount={195}
     createdAt={0}
