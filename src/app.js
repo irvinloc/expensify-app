@@ -6,6 +6,7 @@ import {addExpense} from './actions/expenses';
 import {sortByDate, sortByAmount, setTextFilter} from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import { Provider } from 'react-redux';
+import './firebase/firebase';
 
 
 import 'normalize.css/normalize.css';
