@@ -3,8 +3,10 @@ import ExpenseList from './ExpenseList'
 import { XYPlot, XAxis, YAxis, VerticalGridLines, HorizontalGridLines, LineSeries } from 'react-vis';
 import { connect } from 'react-redux';
 import  getVisibleExpenses  from '../selectors/expenses'
+import  getTotalExpenses  from '../selectors/expenses-total'
 import { setGenerating, resetGenerating }  from '../actions/filters'
 import ExpenseListFilter from './ExpenseListFilter';
+import ExpensesSummary from './ExpensesSummary';
 import makeBins from '../utils/binsForHistogram';
 
 
@@ -14,8 +16,10 @@ export const ExpenseDashboardPage =(props)=> (
     <button onClick={(e)=>{ props.dispatch(setGenerating()) } }>GENERATE</button>
     <button onClick={(e)=>{ props.dispatch(resetGenerating()) }}>STOP GENERATE</button>
     <div>
-        <ExpenseListFilter />
+        <ExpensesSummary/>
+        <ExpenseListFilter  expenseCount={getTotalExpenses(getVisibleExpenses(props.expenses, props.filters))} expensesTotal= {props.expenses.length} />
     </div>
+        
     <XYPlot
         width={600}
         height={300}
