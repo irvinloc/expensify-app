@@ -17,25 +17,25 @@ import moment from 'moment';
 
 const store = configureStore();
 
-console.log(store.getState());
+// console.log(store.getState());
 
-const exp1 = store.dispatch(addExpense({
-    description:'GASTO1',
-    amount: 15,
+// const exp1 = store.dispatch(addExpense({
+//     description:'GASTO1',
+//     amount: 15,
     
-}));
-const exp2 = store.dispatch(addExpense({
-    description:'GASTO 2',
-    note: 'NOTA GASTO 2',
-    amount: 150,
-    createdAt:-1
-}));
-const exp3 = store.dispatch(addExpense({
-    description:'EXPENSE 3',
-    note: 'NOTA EXPENSE 3',
-    amount: 3,
-    createdAt:150
-}));
+// }));
+// const exp2 = store.dispatch(addExpense({
+//     description:'GASTO 2',
+//     note: 'NOTA GASTO 2',
+//     amount: 150,
+//     createdAt:-1
+// }));
+// const exp3 = store.dispatch(addExpense({
+//     description:'EXPENSE 3',
+//     note: 'NOTA EXPENSE 3',
+//     amount: 3,
+//     createdAt:150
+// }));
 let indexCreator=4;
 const exp_generator = setInterval(()=>{
         
@@ -61,14 +61,14 @@ const exp_generator = setInterval(()=>{
     
 //     console.log(getVisibleExpenses(state.expenses,state.filters) )
 // });
-console.log("sortbydate")
-store.dispatch(sortByDate());
-console.log("sortbyAmount")
-store.dispatch(sortByAmount());
+// console.log("sortbydate")
+// store.dispatch(sortByDate());
+// console.log("sortbyAmount")
+// store.dispatch(sortByAmount());
 // const state=store.getState();
 // console.log(state);
 // console.log(getVisibleExpenses(state.expenses,state.filters) )
-console.log('***apply filter ***');
+// console.log('***apply filter ***');
 // store.dispatch(setTextFilter("3"));
 const jsx = (
     <Provider store={store}>

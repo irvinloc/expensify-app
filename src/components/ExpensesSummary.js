@@ -9,7 +9,7 @@ export const ExpensesSummary = ({expenseCount, expensesTotal}) => {
     const expenseWord = expenseCount ===1 ? 'expense': 'expenses';
     return (
     <div>
-        <h2>Viewing {expenseCount} {expenseWord} 
+        <h2>Viewing {expenseCount} {expenseWord}  
         totalling { numeral(expensesTotal/100).format('$0,0.00').replace('$', '€') }</h2>
     </div>
 
