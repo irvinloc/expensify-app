@@ -9,7 +9,9 @@ export default (state=defaultExpensesReducerState, action) => {
             console.log(action.expense);
             return state.map((x)=>x.id===action.expense.id? {...x, ...action.expense.updates}: x)
         case "REMOVE_EXPENSE" :
-            return  state.filter((x)=>x.id!==action.id)           
+            return  state.filter((x)=>x.id!==action.id)    
+        case "SET_EXPENSES" :
+                return action.expenses;
         default: 
             return state
     }

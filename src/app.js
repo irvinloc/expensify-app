@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import AppRouter  from './routers/AppRouter';
 import configureStore from './store/configureStore';
-import {addExpense} from './actions/expenses';
+import {startSetExpenses} from './actions/expenses';
 import {sortByDate, sortByAmount, setTextFilter} from './actions/filters';
 import getVisibleExpenses from './selectors/expenses';
 import { Provider } from 'react-redux';
@@ -16,6 +16,7 @@ import 'react-dates/lib/css/_datepicker.css';
 import moment from 'moment';
 
 const store = configureStore();
+
 
 // console.log(store.getState());
 
@@ -36,23 +37,23 @@ const store = configureStore();
 //     amount: 3,
 //     createdAt:150
 // }));
-let indexCreator=4;
-const exp_generator = setInterval(()=>{
+// let indexCreator=4;
+// const exp_generator = setInterval(()=>{
         
-        if (store.getState().filters.autogenerating) {
-        const added= Math.random()*100 -50;
-        const mimoment=+moment().add(added,'days');
-        console.log("MOMENT", mimoment);
-        store.dispatch(addExpense({
-        description:'EXPENSE ' + indexCreator,
-        note: 'NOTA EXPENSE ' + indexCreator,
-        amount: Math.floor(Math.random()*1000),
-        createdAt:mimoment
+//         if (store.getState().filters.autogenerating) {
+//         const added= Math.random()*100 -50;
+//         const mimoment=+moment().add(added,'days');
+//         console.log("MOMENT", mimoment);
+//         store.dispatch(addExpense({
+//         description:'EXPENSE ' + indexCreator,
+//         note: 'NOTA EXPENSE ' + indexCreator,
+//         amount: Math.floor(Math.random()*1000),
+//         createdAt:mimoment
         
-    }));
-    indexCreator++;
-    }   
-}, 270);
+//     }));
+//     indexCreator++;
+//     }   
+// }, 270);
 
 // const unsubscribe= store.subscribe(()=>{
 //     const state=store.getState();
@@ -76,4 +77,10 @@ const jsx = (
     </Provider>
 
 );
-ReactDOM.render(jsx, document.getElementById('app'));
+ReactDOM.render(<p>Loading...</p>, document.getElementById('app'));
+
+store.dispatch(startSetExpenses()).then(()=>{
+    ReactDOM.render(jsx, document.getElementById('app'));
+} )
+
+
