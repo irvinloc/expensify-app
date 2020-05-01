@@ -6,7 +6,7 @@ import selectExpensesTotal from '../selectors/expenses-total';
 
  
 export const ExpensesSummary = ({expenseCount, expensesTotal}) => {
-    const expenseWord = expenseCount ===1 ? 'expense': 'expenses';
+    const expenseWord = expenseCount ===1 ? 'expense ': 'expenses ';
     return (
     <div>
         <h2>Viewing {expenseCount} {expenseWord}  

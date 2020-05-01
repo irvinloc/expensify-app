@@ -32,10 +32,10 @@ export const editExpense = (id, updates )=>({
             updates
         }
     });
-export const startEditExpense = (id, expenseData={}) => {
+export const startEditExpense = (id, updates) => {
         return (dispatch) => {
-            return database.ref(`expenses/${id}`).update(expenseData).then((snapshot) => {
-                dispatch(editExpense(id, expenseData));
+            return database.ref(`expenses/${id}`).update(updates).then((snapshot) => {
+                dispatch(editExpense(id, updates));
             });
         };
     };

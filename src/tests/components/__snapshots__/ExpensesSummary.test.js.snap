@@ -6,7 +6,7 @@ exports[`should render component correctly 1`] = `
     Viewing 
     3
      
-    expenses
+    expenses 
     totalling 
     €1,141.95
   </h2>
@@ -19,7 +19,7 @@ exports[`should render component correctly with one expense 1`] = `
     Viewing 
     1
      
-    expense
+    expense 
     totalling 
     €1,095.00
   </h2>
@@ -31,7 +31,7 @@ exports[`should render component correctly without expenses 1`] = `
   <h2>
     Viewing 
      
-    expenses
+    expenses 
     totalling 
     €0.00
   </h2>
