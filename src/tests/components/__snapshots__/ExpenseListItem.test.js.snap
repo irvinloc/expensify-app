@@ -1,23 +1,35 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`should render ExpenseListItem with expenses new 1`] = `
-<div>
-  <span>
-    <Link
-      to="/edit/2"
+<Link
+  className="list-item"
+  to="/edit/2"
+>
+  <div>
+    <h3
+      className="list-item__title"
     >
       Rent
-    </Link>
-    - 
-    €1,095.00
-     -
-    December 28th, 1969
-      
-    <button
-      onClick={[Function]}
+       
+    </h3>
+    <span
+      className="list-item__subtitle"
     >
-      Remove
-    </button>
-  </span>
-</div>
+      December 28th, 1969
+         
+    </span>
+  </div>
+  <h3
+    className="list-item__data"
+  >
+      
+    €1,095.00
+     
+  </h3>
+  <button
+    onClick={[Function]}
+  >
+    Remove
+  </button>
+</Link>
 `;
